@@ -116,6 +116,9 @@ public class Game_Controller : MonoBehaviour
         {
             UI_StartLevel();
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
     }
 
     // увеличиваем силу подъема шарика
@@ -243,5 +246,10 @@ public class Game_Controller : MonoBehaviour
 
         DestroyGameObjects();
         OpenClose_Interface_StartGame(true);
+    }
+
+    public void UI_ExitGame()
+    {
+        Application.Quit();
     }
 }
