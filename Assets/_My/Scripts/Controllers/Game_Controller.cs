@@ -63,6 +63,7 @@ public class Game_Controller : MonoBehaviour
     {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = target_frame_rate;
+        Cursor.visible = true;
 
         difficulty_player_speed_easy = 0.04f;
         difficulty_player_speed_middle = 0.08f;
@@ -142,7 +143,8 @@ public class Game_Controller : MonoBehaviour
 
         CancelInvoke();
         SaveProgress();
-        
+
+        Cursor.visible = true;
         panel_gameover.SetActive(true);
     }
 
@@ -171,7 +173,9 @@ public class Game_Controller : MonoBehaviour
     // управление стартовым окном
     private void OpenClose_Interface_StartGame(bool flag_interface)
     {
+        Cursor.visible = flag_interface;
         panel_start.SetActive(flag_interface);
+
         panel_gameover.SetActive(false);
     }
 
